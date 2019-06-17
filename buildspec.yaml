@@ -1,0 +1,27 @@
+version: 0.2
+
+phases:
+    pre_build:
+        commands:
+            - echo Logging in to Amazon ECR...
+            - $(aws ecr get-login --no-include-email --region us-east-1)
+    install:
+        commands:
+            - echo Installing source NPM dependencies...
+            - npm install
+    build:
+        commands:
+            - echo Build started on `date`
+            - npm run build
+            - docker build -t irunninglog/gui-react:latest .
+            - docker tag irunninglog/gui-react:latest 329192577320.dkr.ecr.us-east-1.amazonaws.com/irunninglog/gui-react:latest 
+    post_build:
+        commands:
+            - echo Build completed on `date`
+            - echo Pushing the Docker image...
+            - docker push 329192577320.dkr.ecr.us-east-1.amazonaws.com/irunninglog/gui-react:latest
+            - printf '[{"name":"gui-react","imageUri":"%s"}]' 329192577320.dkr.ecr.us-east-1.amazonaws.com/irunninglog/gui-react:latest > imagedefinitions.json
+
+artifacts:
+  files:
+    - imagedefinitions.json
