@@ -1,0 +1,8 @@
+.LogoContainer {
+    width: 100%
+  }
+
+  .LogoImage {
+    width: 50%;
+    pointer-events: none;
+  }

@@ -1,23 +1,36 @@
 import React from 'react';
-import logo from './nogeeks.svg';
+// import logo from './nogeeks.svg';
 import './App.css';
+import Logo from './Logo';
+import { Query } from "react-apollo";
+import gql from "graphql-tag";
+
+const BreweryQuery = () => (
+  <Query
+    query={gql`
+      {
+        brewery {
+          name
+        }
+      }
+    `}
+  >
+    {({ loading, error, data }) => {
+      if (loading) return <p>Loading...</p>;
+      if (error) return <p>Error ${error.message}</p>;
+
+      return (
+        <Logo brewery={data.brewery} />
+      );
+    }}
+  </Query>
+);
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        {/* <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
+        <BreweryQuery />
       </header>
     </div>
   );
