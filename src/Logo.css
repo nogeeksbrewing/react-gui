@@ -6,3 +6,12 @@
     width: 50%;
     pointer-events: none;
   }
+
+  .LogoName {
+    font-size: calc(16px + 2vmin);
+    margin-bottom: 24px;
+  }
+
+  .LogoLocation, .LogoEstablished {
+    font-size: calc(4px + 2vmin);
+  }

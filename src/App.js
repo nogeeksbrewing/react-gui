@@ -11,6 +11,8 @@ const BreweryQuery = () => (
       {
         brewery {
           name
+          location
+          established
         }
       }
     `}
