@@ -9,14 +9,14 @@ class Logo extends React.Component {
         return (
             <div className="LogoContainer">
                 <img src={logo} className="LogoImage" alt="logo" />
-                <div class="LogoName">
-                    {this.props.brewery.name}
+                <div className="LogoName">
+                    {/* {this.props.brewery.name} */}
                 </div>
-                <div class="LogoEstablished">
-                    {this.props.brewery.established}
+                <div className="LogoEstablished">
+                    {/* {this.props.brewery.established} */}
                 </div>
-                <div class="LogoLocation">
-                    {this.props.brewery.location}
+                <div className="LogoLocation">
+                    {/* {this.props.brewery.location} */}
                 </div>
             </div>
         );
