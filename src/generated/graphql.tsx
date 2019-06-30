@@ -43,6 +43,7 @@ export type RecipeSummary = {
   id: Scalars["ID"];
   name: Scalars["String"];
   style: Scalars["String"];
+  date: Scalars["String"];
 };
 export type GetBreweryQueryVariables = {};
 
@@ -50,7 +51,22 @@ export type GetBreweryQuery = { __typename?: "Query" } & {
   brewery: Maybe<
     { __typename?: "Brewery" } & Pick<
       Brewery,
-      "name" | "id" | "location" | "established"
+      "name" | "location" | "established"
+    >
+  >;
+};
+
+export type GetRecipeSummariesQueryVariables = {};
+
+export type GetRecipeSummariesQuery = { __typename?: "Query" } & {
+  recipes: Maybe<
+    Array<
+      Maybe<
+        { __typename?: "RecipeSummary" } & Pick<
+          RecipeSummary,
+          "id" | "name" | "style" | "date"
+        >
+      >
     >
   >;
 };
@@ -59,7 +75,6 @@ export const GetBreweryDocument = gql`
   query GetBrewery {
     brewery {
       name
-      id
       location
       established
     }
@@ -107,4 +122,67 @@ export function useGetBreweryQuery(
     GetBreweryDocument,
     baseOptions
   );
+}
+export const GetRecipeSummariesDocument = gql`
+  query GetRecipeSummaries {
+    recipes {
+      id
+      name
+      style
+      date
+    }
+  }
+`;
+export type GetRecipeSummariesComponentProps = Omit<
+  ReactApollo.QueryProps<
+    GetRecipeSummariesQuery,
+    GetRecipeSummariesQueryVariables
+  >,
+  "query"
+>;
+
+export const GetRecipeSummariesComponent = (
+  props: GetRecipeSummariesComponentProps
+) => (
+  <ReactApollo.Query<GetRecipeSummariesQuery, GetRecipeSummariesQueryVariables>
+    query={GetRecipeSummariesDocument}
+    {...props}
+  />
+);
+
+export type GetRecipeSummariesProps<TChildProps = {}> = Partial<
+  ReactApollo.DataProps<
+    GetRecipeSummariesQuery,
+    GetRecipeSummariesQueryVariables
+  >
+> &
+  TChildProps;
+export function withGetRecipeSummaries<TProps, TChildProps = {}>(
+  operationOptions?: ReactApollo.OperationOption<
+    TProps,
+    GetRecipeSummariesQuery,
+    GetRecipeSummariesQueryVariables,
+    GetRecipeSummariesProps<TChildProps>
+  >
+) {
+  return ReactApollo.withQuery<
+    TProps,
+    GetRecipeSummariesQuery,
+    GetRecipeSummariesQueryVariables,
+    GetRecipeSummariesProps<TChildProps>
+  >(GetRecipeSummariesDocument, {
+    alias: "withGetRecipeSummaries",
+    ...operationOptions
+  });
+}
+
+export function useGetRecipeSummariesQuery(
+  baseOptions?: ReactApolloHooks.QueryHookOptions<
+    GetRecipeSummariesQueryVariables
+  >
+) {
+  return ReactApolloHooks.useQuery<
+    GetRecipeSummariesQuery,
+    GetRecipeSummariesQueryVariables
+  >(GetRecipeSummariesDocument, baseOptions);
 }

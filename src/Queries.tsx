@@ -4,9 +4,19 @@ const BREWERY_QUERY = gql`
   query GetBrewery {
     brewery {
       name
-      id
       location
       established
     }
   }
 `;       
+
+const RECIPE_SUMMARY_QUERY = gql`
+  query GetRecipeSummaries {
+    recipes {
+      id
+      name
+      style
+      date
+    }
+  }
+`;  

@@ -8,6 +8,7 @@ import { ApolloProvider as ApolloHooksProvider } from 'react-apollo-hooks';
 import { ApolloClient } from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
+import 'typeface-roboto';
 
 const client = new ApolloClient({
     // By default, this client will send queries to the

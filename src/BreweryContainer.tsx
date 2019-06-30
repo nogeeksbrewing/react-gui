@@ -1,5 +1,5 @@
 import React from "react";
-import { useGetBreweryQuery } from "./generated/graphql";
+import { useGetBreweryQuery } from './generated/graphql';
 import Brewery from './Brewery';
 
 const BreweryContainer = () => {
@@ -12,8 +12,6 @@ const BreweryContainer = () => {
   if (error || !data) {
     return <div>ERROR</div>;
   }
-
-  console.log(data);
 
   return <Brewery data={data} />;
 };
