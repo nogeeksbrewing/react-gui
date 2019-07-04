@@ -73,6 +73,9 @@ const RecipeSummaryList: React.FC<Props> = ({ data }) => (
                     <Typography>
                     {!!recipe ? recipe.style : ""}
                     </Typography>
+                    <Typography>
+                    {!!recipe ? recipe.date : ""}
+                    </Typography>
                   </CardContent>
                   <CardActions>
                     <Button size="small" color="primary">
