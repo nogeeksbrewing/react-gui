@@ -20,6 +20,7 @@
     "react-dom": "^16.8.6",
     "react-moment": "^0.9.2",
     "react-scripts": "3.0.1",
+    "react-twitter-embed": "^2.0.8",
     "typeface-roboto": "0.0.54",
     "typescript": "^3.5.2"
   },

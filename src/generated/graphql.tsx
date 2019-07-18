@@ -44,6 +44,9 @@ export type RecipeSummary = {
   name: Scalars["String"];
   style: Scalars["String"];
   date: Scalars["String"];
+  version: Scalars["String"];
+  brewer: Scalars["String"];
+  planned: Scalars["Boolean"];
 };
 export type GetBreweryQueryVariables = {};
 
@@ -64,7 +67,7 @@ export type GetRecipeSummariesQuery = { __typename?: "Query" } & {
       Maybe<
         { __typename?: "RecipeSummary" } & Pick<
           RecipeSummary,
-          "id" | "name" | "style" | "date"
+          "id" | "name" | "style" | "date" | "version" | "brewer" | "planned"
         >
       >
     >
