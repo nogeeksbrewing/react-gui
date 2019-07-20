@@ -1,7 +1,6 @@
 import React from "react";
 import { useGetRecipeSummariesQuery } from '../generated/graphql';
 import RecipeSummaryList from './RecipeSummaryList';
-import moment from 'moment';
 
 const RecipeSummaryListContainer = () => {
   const { data, error, loading } = useGetRecipeSummariesQuery();

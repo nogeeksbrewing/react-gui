@@ -1,14 +1,10 @@
 import * as React from 'react';
-import { GetBreweryQuery } from './generated/graphql';
+import { GetBreweryQuery } from '../generated/graphql';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 
-export interface OwnProps {
-
-}
-
-interface Props extends OwnProps {
+interface Props {
     data: GetBreweryQuery;
 }
 
@@ -46,16 +42,21 @@ const useStyles = makeStyles(theme => ({
 
 const BreweryBanner: React.FC<Props> = ({ data }) => (
         <div className={useStyles().heroContent}>
+          
           <Container maxWidth="sm">
-            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-                {data.brewery ? data.brewery.name : ""}
+          <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+                {data.brewery!.name}
+          </Typography>
+          
+            {/* <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+                {data.brewery}
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
                 {data.brewery ? data.brewery.established : ""}
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
                 {data.brewery ? data.brewery.location : ""}
-            </Typography>
+            </Typography> */}
             </Container>
             </div>
 );

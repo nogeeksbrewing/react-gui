@@ -1,7 +1,6 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import BreweryHeader from './brewery-header/BreweryHeader';
-import BreweryBanner from './BreweryBanner';
+import BreweryBanner from './brewery-banner/BreweryBanner';
 import { GetBreweryQuery } from './generated/graphql';
 import RecipeSummaryListContainer from './recipe-summary-list/RecipeSummaryListContainer';
 import BreweryFooter from './BreweryFooter';
