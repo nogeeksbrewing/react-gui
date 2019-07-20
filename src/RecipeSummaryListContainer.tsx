@@ -18,12 +18,6 @@ const RecipeSummaryListContainer = () => {
     data.recipes.sort((r1, r2) => {
       return r1!.date > r2!.date ? -1 : 1;
     })
-
-    data.recipes.forEach( (recipe) => {
-      recipe!.planned = moment(recipe!.date, 'YYYY-MM-DD').isAfter(moment());
-      recipe!.brewer = 'Allan Lewis';
-      recipe!.version = '1.0';
-    });
   }
 
   return <RecipeSummaryList data={data}/>;

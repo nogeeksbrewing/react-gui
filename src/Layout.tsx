@@ -1,6 +1,6 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import BreweryHeader from './BreweryHeader';
+import BreweryHeader from './brewery-header/BreweryHeader';
 import BreweryBanner from './BreweryBanner';
 import { GetBreweryQuery } from './generated/graphql';
 import RecipeSummaryListContainer from './RecipeSummaryListContainer';
@@ -17,7 +17,7 @@ interface Props extends OwnProps {
 const Layout: React.FC<Props> = ({ data }) => (
   <React.Fragment>
     <CssBaseline />
-    <BreweryHeader data={data} />
+    {/* <BreweryHeader data={data} /> */}
     <main>
       <BreweryBanner data={data} />
       <RecipeSummaryListContainer />

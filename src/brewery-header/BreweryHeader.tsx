@@ -1,16 +1,12 @@
 import * as React from 'react';
-import { GetBreweryQuery } from './generated/graphql';
+import { GetBreweryQuery } from '../generated/graphql';
 import AppBar from '@material-ui/core/AppBar';
 import Menu from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
-export interface OwnProps {
-
-}
-
-interface Props extends OwnProps {
+interface Props {
   data: GetBreweryQuery;
 }
 

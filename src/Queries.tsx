@@ -17,6 +17,10 @@ const RECIPE_SUMMARY_QUERY = gql`
       name
       style
       date
+      brewer
+      assistant
+      version
+      planned
     }
   }
 `;  

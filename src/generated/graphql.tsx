@@ -44,9 +44,10 @@ export type RecipeSummary = {
   name: Scalars["String"];
   style: Scalars["String"];
   date: Scalars["String"];
-  version: Scalars["String"];
-  brewer: Scalars["String"];
   planned: Scalars["Boolean"];
+  brewer?: Maybe<Scalars["String"]>;
+  assistant?: Maybe<Scalars["String"]>;
+  version?: Maybe<Scalars["String"]>;
 };
 export type GetBreweryQueryVariables = {};
 
@@ -67,7 +68,14 @@ export type GetRecipeSummariesQuery = { __typename?: "Query" } & {
       Maybe<
         { __typename?: "RecipeSummary" } & Pick<
           RecipeSummary,
-          "id" | "name" | "style" | "date" | "version" | "brewer" | "planned"
+          | "id"
+          | "name"
+          | "style"
+          | "date"
+          | "brewer"
+          | "assistant"
+          | "version"
+          | "planned"
         >
       >
     >
@@ -133,6 +141,10 @@ export const GetRecipeSummariesDocument = gql`
       name
       style
       date
+      brewer
+      assistant
+      version
+      planned
     }
   }
 `;

@@ -64,13 +64,6 @@ const RecipeSummaryCard: React.FC<Props> = ({ data }) => (
         <Typography variant="body2" color="textSecondary">
             {data.version}
         </Typography>
-        {/* <Typography>
-            Version {data.version}
-        </Typography>
-        <Typography>
-            Brewed by {data.brewer}
-        </Typography> */}
-        {/* {/* <TwitterFollowButton screenName={data.brewer.replace('twitter:@', '')}/> */}
         </CardContent>
         <CardActions>
         <Button size="small" color="primary">
