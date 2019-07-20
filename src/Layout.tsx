@@ -3,7 +3,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import BreweryHeader from './brewery-header/BreweryHeader';
 import BreweryBanner from './BreweryBanner';
 import { GetBreweryQuery } from './generated/graphql';
-import RecipeSummaryListContainer from './RecipeSummaryListContainer';
+import RecipeSummaryListContainer from './recipe-summary-list/RecipeSummaryListContainer';
 import BreweryFooter from './BreweryFooter';
 
 export interface OwnProps {

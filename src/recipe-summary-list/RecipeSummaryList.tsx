@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { GetRecipeSummariesQuery } from './generated/graphql';
+import { GetRecipeSummariesQuery } from '../generated/graphql';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
-import RecipeSummaryCard from './recipe-summary/RecipeSummaryCard';
+import RecipeSummaryCard from '../recipe-summary-card/RecipeSummaryCard';
 
 export interface OwnProps {
 
