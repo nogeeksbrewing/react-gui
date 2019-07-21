@@ -1,9 +1,9 @@
 import React from "react";
-import { useGetRecipeSummariesQuery } from '../generated/graphql';
+import { useGetRecipesQuery } from '../generated/graphql';
 import RecipeSummaryList from './RecipeSummaryList';
 
 const RecipeSummaryListContainer = () => {
-  const { data, error, loading } = useGetRecipeSummariesQuery();
+  const { data, error, loading } = useGetRecipesQuery();
 
   if (loading) {
     return <div></div>;

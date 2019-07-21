@@ -24,7 +24,7 @@ export type Brewery = {
 export type Query = {
   __typename?: "Query";
   brewery?: Maybe<Brewery>;
-  recipes?: Maybe<Array<Maybe<RecipeSummary>>>;
+  recipes?: Maybe<Array<Maybe<Recipe>>>;
   recipe?: Maybe<Recipe>;
 };
 
@@ -34,12 +34,6 @@ export type QueryRecipeArgs = {
 
 export type Recipe = {
   __typename?: "Recipe";
-  id: Scalars["ID"];
-  name: Scalars["String"];
-};
-
-export type RecipeSummary = {
-  __typename?: "RecipeSummary";
   id: Scalars["ID"];
   name: Scalars["String"];
   style: Scalars["String"];
@@ -60,14 +54,14 @@ export type GetBreweryQuery = { __typename?: "Query" } & {
   >;
 };
 
-export type GetRecipeSummariesQueryVariables = {};
+export type GetRecipesQueryVariables = {};
 
-export type GetRecipeSummariesQuery = { __typename?: "Query" } & {
+export type GetRecipesQuery = { __typename?: "Query" } & {
   recipes: Maybe<
     Array<
       Maybe<
-        { __typename?: "RecipeSummary" } & Pick<
-          RecipeSummary,
+        { __typename?: "Recipe" } & Pick<
+          Recipe,
           | "id"
           | "name"
           | "style"
@@ -134,8 +128,8 @@ export function useGetBreweryQuery(
     baseOptions
   );
 }
-export const GetRecipeSummariesDocument = gql`
-  query GetRecipeSummaries {
+export const GetRecipesDocument = gql`
+  query GetRecipes {
     recipes {
       id
       name
@@ -148,56 +142,46 @@ export const GetRecipeSummariesDocument = gql`
     }
   }
 `;
-export type GetRecipeSummariesComponentProps = Omit<
-  ReactApollo.QueryProps<
-    GetRecipeSummariesQuery,
-    GetRecipeSummariesQueryVariables
-  >,
+export type GetRecipesComponentProps = Omit<
+  ReactApollo.QueryProps<GetRecipesQuery, GetRecipesQueryVariables>,
   "query"
 >;
 
-export const GetRecipeSummariesComponent = (
-  props: GetRecipeSummariesComponentProps
-) => (
-  <ReactApollo.Query<GetRecipeSummariesQuery, GetRecipeSummariesQueryVariables>
-    query={GetRecipeSummariesDocument}
+export const GetRecipesComponent = (props: GetRecipesComponentProps) => (
+  <ReactApollo.Query<GetRecipesQuery, GetRecipesQueryVariables>
+    query={GetRecipesDocument}
     {...props}
   />
 );
 
-export type GetRecipeSummariesProps<TChildProps = {}> = Partial<
-  ReactApollo.DataProps<
-    GetRecipeSummariesQuery,
-    GetRecipeSummariesQueryVariables
-  >
+export type GetRecipesProps<TChildProps = {}> = Partial<
+  ReactApollo.DataProps<GetRecipesQuery, GetRecipesQueryVariables>
 > &
   TChildProps;
-export function withGetRecipeSummaries<TProps, TChildProps = {}>(
+export function withGetRecipes<TProps, TChildProps = {}>(
   operationOptions?: ReactApollo.OperationOption<
     TProps,
-    GetRecipeSummariesQuery,
-    GetRecipeSummariesQueryVariables,
-    GetRecipeSummariesProps<TChildProps>
+    GetRecipesQuery,
+    GetRecipesQueryVariables,
+    GetRecipesProps<TChildProps>
   >
 ) {
   return ReactApollo.withQuery<
     TProps,
-    GetRecipeSummariesQuery,
-    GetRecipeSummariesQueryVariables,
-    GetRecipeSummariesProps<TChildProps>
-  >(GetRecipeSummariesDocument, {
-    alias: "withGetRecipeSummaries",
+    GetRecipesQuery,
+    GetRecipesQueryVariables,
+    GetRecipesProps<TChildProps>
+  >(GetRecipesDocument, {
+    alias: "withGetRecipes",
     ...operationOptions
   });
 }
 
-export function useGetRecipeSummariesQuery(
-  baseOptions?: ReactApolloHooks.QueryHookOptions<
-    GetRecipeSummariesQueryVariables
-  >
+export function useGetRecipesQuery(
+  baseOptions?: ReactApolloHooks.QueryHookOptions<GetRecipesQueryVariables>
 ) {
-  return ReactApolloHooks.useQuery<
-    GetRecipeSummariesQuery,
-    GetRecipeSummariesQueryVariables
-  >(GetRecipeSummariesDocument, baseOptions);
+  return ReactApolloHooks.useQuery<GetRecipesQuery, GetRecipesQueryVariables>(
+    GetRecipesDocument,
+    baseOptions
+  );
 }

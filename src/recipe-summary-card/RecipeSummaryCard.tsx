@@ -1,5 +1,5 @@
 import React from 'react';
-import { RecipeSummary } from '../generated/graphql';
+import { Recipe } from '../generated/graphql';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -12,7 +12,7 @@ import Moment from 'react-moment';
 import logo from '../nogeeks.svg';
 
 interface Props {
-  data: RecipeSummary;
+  data: Recipe;
 }
 
 const useStyles = makeStyles(theme => ({

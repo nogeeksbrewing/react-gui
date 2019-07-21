@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { GetRecipeSummariesQuery } from '../generated/graphql';
+import { GetRecipesQuery } from '../generated/graphql';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
@@ -10,7 +10,7 @@ export interface OwnProps {
 }
 
 interface Props extends OwnProps {
-  data: GetRecipeSummariesQuery;
+  data: GetRecipesQuery;
 }
 
 const useStyles = makeStyles(theme => ({

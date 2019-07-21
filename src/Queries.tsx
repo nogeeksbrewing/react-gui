@@ -11,7 +11,7 @@ const BREWERY_QUERY = gql`
 `;       
 
 const RECIPE_SUMMARY_QUERY = gql`
-  query GetRecipeSummaries {
+  query GetRecipes {
     recipes {
       id
       name
