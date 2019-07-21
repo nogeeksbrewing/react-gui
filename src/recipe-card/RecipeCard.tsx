@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Recipe } from '../generated/graphql';
 import Card from '@material-ui/core/Card';
@@ -33,7 +34,7 @@ const useStyles = makeStyles(theme => ({
     }
   }));
 
-const RecipeSummaryCard: React.FC<Props> = ({ data }) => (
+const RecipeCard: React.FC<Props> = ({ data }) => (
   <React.Fragment>
     <Card className={useStyles().card}>
         <CardMedia
@@ -74,4 +75,4 @@ const RecipeSummaryCard: React.FC<Props> = ({ data }) => (
   </React.Fragment>
 );
 
-export default RecipeSummaryCard;
+export default RecipeCard;

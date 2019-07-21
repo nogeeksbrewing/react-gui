@@ -3,7 +3,7 @@ import { GetRecipesQuery } from '../generated/graphql';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
-import RecipeSummaryCard from '../recipe-summary-card/RecipeSummaryCard';
+import RecipeCard from '../recipe-card/RecipeCard';
 
 export interface OwnProps {
 
@@ -20,13 +20,13 @@ const useStyles = makeStyles(theme => ({
     },
   }));
 
-const RecipeSummaryList: React.FC<Props> = ({ data }) => (
+const RecipeList: React.FC<Props> = ({ data }) => (
     <React.Fragment>
         <Container className={useStyles().cardGrid} maxWidth="md">
           <Grid container spacing={4}>
             {!!data.recipes && data.recipes.map(recipe => (
               <Grid item key={!!recipe ? recipe.id : ""} xs={12} sm={6} md={4}>
-                <RecipeSummaryCard data={recipe!}/>
+                <RecipeCard data={recipe!}/>
               </Grid>
             ))}
           </Grid>
@@ -34,4 +34,4 @@ const RecipeSummaryList: React.FC<Props> = ({ data }) => (
     </React.Fragment>
 );
 
-export default RecipeSummaryList;
+export default RecipeList;

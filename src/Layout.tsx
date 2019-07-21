@@ -2,7 +2,7 @@ import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import BreweryBanner from './brewery-banner/BreweryBanner';
 import { GetBreweryQuery } from './generated/graphql';
-import RecipeSummaryListContainer from './recipe-summary-list/RecipeSummaryListContainer';
+import RecipeListContainer from './recipe-list/RecipeListContainer';
 import BreweryFooter from './brewery-footer/BreweryFooter';
 
 export interface OwnProps {
@@ -19,7 +19,7 @@ const Layout: React.FC<Props> = ({ data }) => (
     {/* <BreweryHeader data={data} /> */}
     <main>
       <BreweryBanner data={data} />
-      <RecipeSummaryListContainer />
+      <RecipeListContainer />
     </main>
     <BreweryFooter data={data} />
   </React.Fragment>

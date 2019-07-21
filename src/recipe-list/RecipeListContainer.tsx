@@ -1,8 +1,8 @@
 import React from "react";
 import { useGetRecipesQuery } from '../generated/graphql';
-import RecipeSummaryList from './RecipeSummaryList';
+import RecipeList from './RecipeList';
 
-const RecipeSummaryListContainer = () => {
+const RecipeListContainer = () => {
   const { data, error, loading } = useGetRecipesQuery();
 
   if (loading) {
@@ -19,7 +19,7 @@ const RecipeSummaryListContainer = () => {
     })
   }
 
-  return <RecipeSummaryList data={data}/>;
+  return <RecipeList data={data}/>;
 };
 
-export default RecipeSummaryListContainer;
+export default RecipeListContainer;
