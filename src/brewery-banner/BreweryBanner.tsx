@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { GetBreweryQuery } from '../generated/graphql';
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import logo from '../nogeeks.svg';
 
 interface Props {
   data: GetBreweryQuery;
@@ -44,9 +44,7 @@ const BreweryBanner: React.FC<Props> = ({ data }) => (
   <div className={useStyles().heroContent}>
 
     <Container maxWidth="sm">
-      <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-        {data.brewery!.name}
-      </Typography>
+      <img src={logo} className="logo-image" alt={data.brewery!.name} />
     </Container>
   </div>
 );
