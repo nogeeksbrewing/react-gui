@@ -1,17 +1,3 @@
-/*
-//   card: {
-    //       height: '100%',
-    //       display: 'flex',
-    //       flexDirection: 'column',
-    //       backgroundImage: `url(${background})`,
-    //       backgroundRepeat: 'no-repeat',
-    //       backgroundPosition: 'center',
-    //     },
-    //     cardContent: {
-    //       flexGrow: 1,
-    //     }
-    */
-
 .recipe-card::after {
     height: 100%;
     display: flex;
@@ -27,6 +13,6 @@
     background-position: center;
 }
 
-.recipe-card-content {
+.recipe-header {
     flex-grow: 1;
 }

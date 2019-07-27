@@ -16,26 +16,13 @@ interface Props {
   data: Recipe;
 }
 
-// const useStyles = makeStyles(theme => ({
-//   card: {
-//       height: '100%',
-//       display: 'flex',
-//       flexDirection: 'column',
-//       backgroundImage: `url(${background})`,
-//       backgroundRepeat: 'no-repeat',
-//       backgroundPosition: 'center',
-//     },
-//     cardContent: {
-//       flexGrow: 1,
-//     }
-//   }));
-
 const RecipeCard: React.FC<Props> = ({ data }) => (
   <React.Fragment>
     <Card className="recipe-card">
         <CardHeader
         title={data.name}
         subheader={data.style}
+        className="recipe-header"
       />
         <CardContent className="recipe-card-content">
         <Typography variant="body1">
