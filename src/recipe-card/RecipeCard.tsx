@@ -45,7 +45,7 @@ const RecipeCard: React.FC<Props> = ({ data }) => (
             Brewed by:
         </Typography>
         <Typography variant="body2" color="textSecondary">
-            {data.brewer}
+            {data.brewer} {data.assistant ? ' (w/ ' + data.assistant + ')' : ''}
         </Typography>
         <Typography variant="body1">
             Version:

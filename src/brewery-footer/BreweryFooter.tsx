@@ -2,7 +2,8 @@ import * as React from 'react';
 import { GetBreweryQuery } from '../generated/graphql';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { TwitterFollowButton } from 'react-twitter-embed';
+// import { TwitterFollowButton } from 'react-twitter-embed';
+// import { FacebookProvider, Like } from 'react-facebook';
 
 interface Props {
   data: GetBreweryQuery;
@@ -33,9 +34,14 @@ const BreweryFooter: React.FC<Props> = ({ data }) => (
     <Typography variant="body2" color="textSecondary" align="center">
       {data.brewery!.established}
     </Typography>
-    <div className={useStyles().socialContainer}>
+    {/* <div hidden className={useStyles().socialContainer}>
       <TwitterFollowButton screenName={'nogeeksbrewing'} />
     </div>
+    <div hidden className={useStyles().socialContainer}>
+      <FacebookProvider appId="445785189605416">
+        <Like href="http://www.facebook.com" colorScheme="dark" showFaces share />
+      </FacebookProvider>
+    </div> */}
   </footer>
 );
 
