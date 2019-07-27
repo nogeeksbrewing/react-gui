@@ -1,0 +1,32 @@
+/*
+//   card: {
+    //       height: '100%',
+    //       display: 'flex',
+    //       flexDirection: 'column',
+    //       backgroundImage: `url(${background})`,
+    //       backgroundRepeat: 'no-repeat',
+    //       backgroundPosition: 'center',
+    //     },
+    //     cardContent: {
+    //       flexGrow: 1,
+    //     }
+    */
+
+.recipe-card::after {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../hops.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.recipe-card-content {
+    flex-grow: 1;
+}

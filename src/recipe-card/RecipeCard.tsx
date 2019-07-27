@@ -8,31 +8,36 @@ import CardHeader from '@material-ui/core/CardHeader';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import background from '../hops.svg';
+import './RecipeCard.css';
 import Moment from 'react-moment';
 
 interface Props {
   data: Recipe;
 }
 
-const useStyles = makeStyles(theme => ({
-    card: {
-      height: '100%',
-      display: 'flex',
-      flexDirection: 'column',
-    },
-    cardContent: {
-      flexGrow: 1,
-    }
-  }));
+// const useStyles = makeStyles(theme => ({
+//   card: {
+//       height: '100%',
+//       display: 'flex',
+//       flexDirection: 'column',
+//       backgroundImage: `url(${background})`,
+//       backgroundRepeat: 'no-repeat',
+//       backgroundPosition: 'center',
+//     },
+//     cardContent: {
+//       flexGrow: 1,
+//     }
+//   }));
 
 const RecipeCard: React.FC<Props> = ({ data }) => (
   <React.Fragment>
-    <Card className={useStyles().card}>
+    <Card className="recipe-card">
         <CardHeader
         title={data.name}
         subheader={data.style}
       />
-        <CardContent className={useStyles().cardContent}>
+        <CardContent className="recipe-card-content">
         <Typography variant="body1">
             Brew date{data.planned ? ' (planned)' : ''}:
         </Typography>
